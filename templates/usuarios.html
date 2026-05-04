@@ -3,8 +3,21 @@
 <head>
     <title>Usuários</title>
     <link rel="stylesheet" href="/static/style.css">
-</head>
 <body>
+<div class="overlay">
+    <div class="container">
+        <h1>📡 Registros da Cidade</h1>
+
+        <ul>
+            {% for u in usuarios %}
+                <li>👤 {{ u }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/">⬅ Voltar</a>
+    </div>
+</div>
+</body>
 
 <div class="container">
     <h1>📋 Lista de Usuários</h1>
