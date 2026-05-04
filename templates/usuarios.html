@@ -2,17 +2,21 @@
 <html>
 <head>
     <title>Usuários</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Usuários cadastrados 📋</h1>
+
+<div class="container">
+    <h1>📋 Lista de Usuários</h1>
 
     <ul>
-        {% for usuario in usuarios %}
-            <li>{{ usuario }}</li>
+        {% for u in usuarios %}
+            <li>{{ u }}</li>
         {% endfor %}
     </ul>
 
-    <br>
     <a href="/">Voltar</a>
+</div>
+
 </body>
 </html>

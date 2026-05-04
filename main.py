@@ -5,7 +5,6 @@ from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
-# arquivos estáticos (CSS)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
@@ -15,8 +14,8 @@ usuarios = []
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
     return templates.TemplateResponse(
-        "index.html",
-        {"request": request}
+        name="index.html",
+        context={"request": request}
     )
 
 @app.post("/adicionar")
@@ -27,6 +26,6 @@ def adicionar(nome: str = Form(...)):
 @app.get("/usuarios", response_class=HTMLResponse)
 def listar(request: Request):
     return templates.TemplateResponse(
-        "usuarios.html",
-        {"request": request, "usuarios": usuarios}
+        name="usuarios.html",
+        context={"request": request, "usuarios": usuarios}
     )

@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Usuários</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
 <div class="container">
-    <h1>📋 Lista de Usuários</h1>
+    <h1>🚀 Sistema de Cadastro</h1>
 
-    <ul>
-        {% for usuario in usuarios %}
-            <li>{{ usuario }}</li>
-        {% endfor %}
-    </ul>
+    <form action="/adicionar" method="post">
+        <input type="text" name="nome" placeholder="Digite seu nome" required>
+        <button type="submit">Cadastrar</button>
+    </form>
 
-    <a href="/">⬅ Voltar</a>
+    <a href="/usuarios">Ver usuários</a>
 </div>
 
 </body>
