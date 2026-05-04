@@ -5,17 +5,20 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+<div class="overlay">
+    <div class="container">
+        <h1>🌆 Neon City Registry</h1>
 
-<div class="container">
-    <h1>🚀 Sistema de Cadastro</h1>
+        <p>Cadastre sua identidade para acesso à rede da cidade</p>
 
-    <form action="/adicionar" method="post">
-        <input type="text" name="nome" placeholder="Digite seu nome" required>
-        <button type="submit">Cadastrar</button>
-    </form>
+        <form action="/adicionar" method="post">
+            <input type="text" name="nome" placeholder="Digite seu codinome" required>
+            <br>
+            <button type="submit">Registrar</button>
+        </form>
 
-    <a href="/usuarios">Ver usuários</a>
+        <a href="/usuarios">Ver cidadãos registrados</a>
+    </div>
 </div>
-
 </body>
 </html>
