@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Usuários</title>
+</head>
+<body>
+    <h1>Usuários cadastrados 📋</h1>
+
+    <ul>
+        {% for usuario in usuarios %}
+            <li>{{ usuario }}</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="/">Voltar</a>
+</body>
+</html>
