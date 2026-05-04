@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Página Inicial</title>
+    <title>Usuários</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Bem-vindo ao sistema 👋</h1>
 
-    <p>Esse é um exemplo de página com integração com backend em Python.</p>
+<div class="container">
+    <h1>📋 Lista de Usuários</h1>
 
-    <img src="/static/imagem.jpg" width="300">
+    <ul>
+        {% for usuario in usuarios %}
+            <li>{{ usuario }}</li>
+        {% endfor %}
+    </ul>
 
-    <h2>Cadastrar usuário</h2>
+    <a href="/">⬅ Voltar</a>
+</div>
 
-    <form action="/adicionar" method="post">
-        <input type="text" name="nome" placeholder="Digite seu nome" required>
-        <button type="submit">Cadastrar</button>
-    </form>
-
-    <br>
-    <a href="/usuarios">Ver usuários cadastrados</a>
 </body>
 </html>
