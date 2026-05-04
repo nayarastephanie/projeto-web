@@ -14,8 +14,9 @@ usuarios = []
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
     return templates.TemplateResponse(
-        name="index.html",
-        context={"request": request}
+        request,                     # 👈 PRIMEIRO ARGUMENTO
+        "index.html",
+        {"usuarios": usuarios}      # 👈 NÃO precisa passar request aqui
     )
 
 @app.post("/adicionar")
@@ -26,6 +27,7 @@ def adicionar(nome: str = Form(...)):
 @app.get("/usuarios", response_class=HTMLResponse)
 def listar(request: Request):
     return templates.TemplateResponse(
-        name="usuarios.html",
-        context={"request": request, "usuarios": usuarios}
+        request,                     # 👈 PRIMEIRO ARGUMENTO
+        "usuarios.html",
+        {"usuarios": usuarios}
     )
